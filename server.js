@@ -7,6 +7,10 @@ const PORT = 8000;
 //middlewares
 app.use(express.json());
 
+//data base setup
+import { dbConnect } from "./src/config/dbConfig.js";
+dbConnect();
+
 import taskRouter from "./src/routers/taskRouter.js";
 app.use("/api/v1/task", taskRouter);
 
