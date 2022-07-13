@@ -1,4 +1,4 @@
-import TaskSchema from "./TaskSchema";
+import TaskSchema from "./TaskSchema.js";
 
 //insert
 export const insertTask = (taskObj) => {
