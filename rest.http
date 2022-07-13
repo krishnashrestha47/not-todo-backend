@@ -1,0 +1,13 @@
+#
+
+### fetch all the tasks
+GET http://localhost:8000/api/v1/task
+
+### post the task
+POST http://localhost:8000/api/v1/task
+Content-Type: application/json
+
+{
+    "task": "watching tv",
+    "hr": 20,
+}
