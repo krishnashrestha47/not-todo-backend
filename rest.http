@@ -9,7 +9,7 @@ POST http://localhost:8000/api/v1/task
 Content-Type: application/json
 
 {
-    "task": "Hello tv",
+    "task": "Watching tv",
     "hr": 12,
     "id": 12
 }
@@ -19,14 +19,14 @@ PATCH http://localhost:8000/api/v1/task
 Content-Type: application/json
 
 {
-    "_id": "62cebd000ede3b417cc23428",
-    "type": "entry"
+    "_id": "62cebcbf0ede3b417cc23426",
+    "type": "bad"
 }
 
 ###  deleted the tasks
 DELETE http://localhost:8000/api/v1/task/
-# Content-Type: application/json
+Content-Type: application/json
 
-# {
-#     "_id" : 10
-# }
+{
+    "_id" : 10
+}

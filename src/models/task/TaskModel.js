@@ -16,7 +16,7 @@ export const getSingleTask = (_id) => {
 };
 
 // update
-export const updatTask = (_id, type) => {
+export const updateTask = (_id, type) => {
   return TaskSchema.findByIdAndUpdate(_id, { type }, { new: true });
 };
 
