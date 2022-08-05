@@ -1,4 +1,6 @@
 import express from "express";
+import cors from "cors";
+import helmet from "helmet";
 
 const app = express();
 
@@ -6,6 +8,8 @@ const PORT = 8000;
 
 //middlewares
 app.use(express.json());
+app.use(cors());
+app.use(helmet());
 
 //data base setup
 import { dbConnect } from "./src/config/dbConfig.js";
