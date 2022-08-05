@@ -1,5 +1,6 @@
 import express from "express";
 import {
+  deleteManyTasks,
   deleteTaskById,
   getSingleTask,
   getTasks,
@@ -61,15 +62,18 @@ router.patch("/", async (req, res, next) => {
   }
 });
 
-router.delete("/:_id", async (req, res, next) => {
+// router.delete("/:_id", async (req, res, next) => {
+router.delete("/", async (req, res, next) => {
   try {
-    const { _id } = req.params;
-    const result = await deleteTaskById(_id);
+    // const { _id } = req.params;
+    const { ids } = req.body;
+    // const result = await deleteTaskById(_id);
+    const result = await deleteManyTasks(ids);
     console.log(result);
 
     res.json({
       status: "success", // either success or error
-      messsage: "return from delete method",
+      messsage: "The selected tasks has been deleted",
     });
   } catch (error) {
     next(error);
