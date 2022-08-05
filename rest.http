@@ -16,11 +16,17 @@ Content-Type: application/json
 
 ###  update or switch  task
 PATCH http://localhost:8000/api/v1/task
-
-###  deleted the tasks
-DELETE http://localhost:8000/api/v1/task/
 Content-Type: application/json
 
 {
-    "_id" : 10
+    "_id": "62cebd000ede3b417cc23428",
+    "type": "entry"
 }
+
+###  deleted the tasks
+DELETE http://localhost:8000/api/v1/task/
+# Content-Type: application/json
+
+# {
+#     "_id" : 10
+# }

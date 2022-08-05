@@ -3,6 +3,7 @@ import {
   getSingleTask,
   getTasks,
   insertTask,
+  updateTask,
 } from "../models/task/TaskModel.js";
 const router = express.Router();
 
@@ -41,11 +42,18 @@ router.post("/", async (req, res, next) => {
   }
 });
 
-router.patch("/", (req, res, next) => {
+router.patch("/", async (req, res, next) => {
   try {
+    console.log(req.body);
+    const { _id, type } = req.body;
+
+    const result = await updateTask(_id, type);
+    console.log(result);
+
     res.json({
       status: "success", // either success or error
       messsage: "return from patch method",
+      result,
     });
   } catch (error) {
     next(error);
