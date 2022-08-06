@@ -34,11 +34,17 @@ router.post("/", async (req, res, next) => {
     const result = await insertTask(req.body);
     console.log(result);
 
-    res.json({
-      status: "success", // either success or error
-      messsage: "todo",
-      result,
-    });
+    result?._id
+      ? res.json({
+          status: "success", // either success or error
+          messsage: "The new task has been added",
+          result,
+        })
+      : res.json({
+          status: "error", // either success or error
+          messsage: "Error, unable to add new task !",
+          result,
+        });
   } catch (error) {
     next(error);
   }
